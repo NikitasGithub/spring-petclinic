@@ -11,5 +11,11 @@ pipeline {
       	echo 'hello'
       }
     }
+    stage('Docker Build') {
+    	agent any
+      steps {
+      	sh 'docker build -t ngupta0107/spring-petclinic:latest .'
+      }
+    }
   }
 }
